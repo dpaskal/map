@@ -3,7 +3,7 @@
 
 namespace cs540 {
 	struct Map {
-		int i;
+		int i;	// public by default
 
 		Map() { // constructor
 			i = 987654321;
