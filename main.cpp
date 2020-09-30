@@ -3,6 +3,7 @@
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    std::cout << cs540::i << std::endl;
+    cs540::Map map;
+    std::cout << map.i << std::endl;
     return 0;
 }
