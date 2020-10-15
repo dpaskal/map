@@ -9,7 +9,7 @@ namespace cs540 {
 		// public by default
 		typedef std::pair<key_t, mapped_t> val_t;
 		size_t _size = 0;
-		Map() { // constructor
+		Map() {		// constructor
 			;
 		}
 		Map(const Map& copyMap) {
@@ -17,7 +17,7 @@ namespace cs540 {
 		}
 		Map(std::initializer_list<val_t> elems) {
 			std::cout << "initializer list constructor: " << std::endl;
-			for(auto e: elems) {
+			for(val_t e: elems) {
 				_size++;
 				std::cout << e.first << " " << e.second << std::endl;
 			}
