@@ -1,20 +1,21 @@
 FLAGS = -g -std=c++1z -Wall -Wextra -pedantic -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wrestrict -Wuseless-cast -Wformat=2
 VFLAGS = --track-origins=yes --leak-check=full --show-leak-kinds=all
-BIN = map
+CC = g++
+TARGET = map
 
-all: main
+all: $(TARGET)
 
-main: main.cpp map.hpp
-	g++ main.cpp -o $(BIN) $(FLAGS)
+$(TARGET): main.cpp map.hpp
+	$(CC) main.cpp -o $(TARGET) $(FLAGS)
 
 .phony:clean
 clean:
-	rm -rf $(BIN)
+	rm -rf $(TARGET)
 
 test: clean
 	make
-	./$(BIN)
+	./$(TARGET)
 
 val: clean
 	make
-	valgrind $(VFLAGS) ./$(BIN)
+	valgrind $(VFLAGS) ./$(TARGET)
