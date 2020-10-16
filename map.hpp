@@ -13,15 +13,12 @@ namespace cs540 {
 		public:
 			// constructor
 			node() = delete;
-			node(const K *key, const V *value) : 
-				key(key), value(value), next(NULL) {}
+			node(const K *key, const V *value) : key(key), value(value), next(NULL) {}
 
-			K getKey() const {
-				return key;
-			}
-			V getValue() const {
-				return value;
-			}
+			K		getKey	() const		{ return key; }
+			V		getValue() const		{ return value; }
+			void	setValue(V val)			{ node::value = val; }
+			void	setNext	(node* next)	{ node::next = next; }
 	};
 
 	template <typename key_t, typename mapped_t>
