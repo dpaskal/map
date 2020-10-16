@@ -4,6 +4,26 @@
 #define DEFAULT_CAPACITY 10
 
 namespace cs540 {
+	template <typename K, typename V>
+	struct node {
+		private:
+			K key;
+			V value;
+			node* next;
+		public:
+			// constructor
+			node() = delete;
+			node(const K *key, const V *value) : 
+				key(key), value(value), next(NULL) {}
+
+			K getKey() const {
+				return key;
+			}
+			V getValue() const {
+				return value;
+			}
+	};
+
 	template <typename key_t, typename mapped_t>
 	struct Map {
 		// public by default
