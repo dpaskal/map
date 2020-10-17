@@ -35,7 +35,7 @@ namespace cs540 {
 		Map(std::initializer_list<val_t> elems) {
 			std::cout << "initializer list constructor: " << std::endl;
 			for(val_t e: elems) {
-				_size++;
+				++_size;
 				std::cout << e.first << " " << e.second << std::endl;
 			}
 		}
