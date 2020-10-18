@@ -12,7 +12,7 @@ namespace cs540 {
 			node* next;
 		public:
 			// constructor
-			node() = delete;
+			node() {};
 			node(const K *key, const V *value) : key(key), value(value), next(NULL) {}
 
 			K		getKey	() const		{ return key; }
@@ -29,7 +29,7 @@ namespace cs540 {
 			typedef std::pair<key_t, mapped_t> val_t;
 			size_t _size = 0;
 			Map() {		// constructor
-				;
+				table = new node<key_t, mapped_t>[DEFAULT_CAPACITY]();
 			}
 			Map(const Map& copyMap) {
 				_size = copyMap._size;
