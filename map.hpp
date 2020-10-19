@@ -24,17 +24,19 @@ namespace cs540 {
 	template <typename K, typename V>
 	struct Map {
 		private:
-			node<K, V> *table;
+			node<K, V> **table;
+			size_t _size = 0;
+			int index = 0;
 		public:
 			typedef std::pair<K, V> val_t;
-			size_t _size = 0;
 			Map() {		// constructor
-				table = new node<K, V>[DEFAULT_CAPACITY]();
+				table = new node<K, V>*[DEFAULT_CAPACITY]();
 			}
 			Map(const Map& copyMap) {
 				_size = copyMap._size;
 			}
 			Map(std::initializer_list<val_t> elems) {
+				table = new node<K, V>*[DEFAULT_CAPACITY]();
 				std::cout << "initializer list constructor: " << std::endl;
 				for(val_t e: elems) {
 					++_size;
