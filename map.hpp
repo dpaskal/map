@@ -21,15 +21,15 @@ namespace cs540 {
 			void	setNext	(node* next)	{ node::next = next; }
 	};
 
-	template <typename key_t, typename mapped_t>
+	template <typename K, typename V>
 	struct Map {
 		private:
-			node<key_t, mapped_t> *table;
+			node<K, V> *table;
 		public:
-			typedef std::pair<key_t, mapped_t> val_t;
+			typedef std::pair<K, V> val_t;
 			size_t _size = 0;
 			Map() {		// constructor
-				table = new node<key_t, mapped_t>[DEFAULT_CAPACITY]();
+				table = new node<K, V>[DEFAULT_CAPACITY]();
 			}
 			Map(const Map& copyMap) {
 				_size = copyMap._size;
